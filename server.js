@@ -3,7 +3,7 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     massive = require('massive'),
     cors = require('cors')
-
+    request = require('request')
 
     var app =express()
 
@@ -15,12 +15,12 @@ var express = require('express'),
 
   const db = massive.connectSync({connectionString: 'postgres://postgres:1234a@localhost/testDB'})
 
-  app.post('/send:text', function(req, res ) {
+  app.post('/send', function(req, res ) {
+    db.postdata(function(err, data) {
+      data: 'things'
+    })
+    })
 
-    db.(){
-    console.log(data)
-}
-  })
 
   app.use(express.static('./public'))
 
