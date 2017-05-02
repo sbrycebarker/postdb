@@ -30,11 +30,13 @@ var express = require('express'),
     })
   })
 
-  app.delete('/delete', function(req, res ) {
-    db.run('delete from data where text_id = id', function (err) {
+  app.delete('/delete/:id', function(req, res ) {
+    db.run([req.params.id],'delete from data where text_id = $1', function (err) {
       console.log(err)
     })
   })
+
+
 
 
   app.use(express.static('./public'))
