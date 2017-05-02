@@ -8,7 +8,9 @@
   <main ng-controller="mainCtrl">
     <input class-"data" type="text" name="text" ng-model="text" placeholder="Enter Text Here">
     <button class="submit" ng-click="postData( { text : text } )"> Submit and send to DB</button>
-
+    <div class="stuff" ng-repeat= "data in data">
+    <ul> <li> TEXT {{data.text}}</li><li> ID {{data.text_id}} </li><button ng-click="delete({{text_id}})">X</button></ul>
+      <div>
 <ui-view></ui-view>
 </main>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>

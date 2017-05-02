@@ -1,1 +1,1 @@
-insert into stuff (data) values ('that')
+insert into data (text) values ($1)
