@@ -11,8 +11,8 @@ angular.module('myApp').controller('mainCtrl', function($scope, service) {
   }
   $scope.getData()
 
-  $scope.delete = function(id) {
-    service.delete(id);
+  $scope.deleteText = function(id) {
+    service.deleteText(id);
   }
 
 })

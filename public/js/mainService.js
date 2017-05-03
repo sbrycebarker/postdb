@@ -13,10 +13,17 @@ angular.module('myApp').service('service', function( $http ) {
       url: '/getData',
     })
   }
-  this.delete = function(id) {
+  this.deleteText = function(id) {
     return $http ({
-      method: 'GET',
+      method: 'DELETE',
       url: '/delete/' + id
+    })
+  }
+
+  this.changeData = function(data) {
+    return $http ({
+      method: 'UPDATE',
+      url: '/change/' + data 
     })
   }
 

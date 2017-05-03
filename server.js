@@ -30,10 +30,18 @@ var express = require('express'),
     })
   })
 
-  app.delete('/delete/:id', function(req, res ) {
-    db.run([req.params.id],'delete from data where text_id = $1', function (err) {
+  app.delete('/delete/:id', function(req, res, params ) {
+    db.removedata([req.params.id], function (err) {
       console.log(err)
+      console.log(params)
     })
+  })
+
+  app.put('/change/data', function(req, res, params) {
+    db.changeData(req.params.data), function (err ){
+      console.log(err)
+      console.log(err)
+    }
   })
 
 
