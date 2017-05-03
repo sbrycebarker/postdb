@@ -1,1 +1,2 @@
-delete from data where text_id = $1
+delete from data
+where text_id = $1

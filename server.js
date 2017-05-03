@@ -37,11 +37,12 @@ var express = require('express'),
     })
   })
 
-  app.put('/change/data', function(req, res, params) {
-    db.changeData(req.params.data), function (err ){
+  app.put('/change/:id', function(req, res, params) {
+    console.log(req.body)
+    db.changedata([req.params.id , req.body.text ], function (err ){
       console.log(err)
-      console.log(err)
-    }
+      res.send("id")
+    })
   })
 
 

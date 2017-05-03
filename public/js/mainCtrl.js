@@ -6,13 +6,17 @@ angular.module('myApp').controller('mainCtrl', function($scope, service) {
   $scope.getData = function() {
     service.getData().then(function(results){
       $scope.data = results.data
-      console.log(results.data)
+      // console.log(results.data)
     })
   }
   $scope.getData()
 
   $scope.deleteText = function(id) {
     service.deleteText(id);
+  }
+
+  $scope.changeData = function( item ) {
+    service.changeData( item )
   }
 
 })

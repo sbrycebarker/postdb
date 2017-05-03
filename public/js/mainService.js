@@ -7,12 +7,14 @@ angular.module('myApp').service('service', function( $http ) {
       data: data
     })
   }
+
   this.getData = function(data) {
     return $http({
       method: 'GET',
       url: '/getData',
     })
   }
+
   this.deleteText = function(id) {
     return $http ({
       method: 'DELETE',
@@ -20,10 +22,12 @@ angular.module('myApp').service('service', function( $http ) {
     })
   }
 
-  this.changeData = function(data) {
+  this.changeData = function(item) {
+    console.log(item)
     return $http ({
-      method: 'UPDATE',
-      url: '/change/' + data 
+      method: 'PUT',
+      url: '/change/' + item.id,
+      data: item
     })
   }
 
